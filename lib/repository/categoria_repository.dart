@@ -18,4 +18,29 @@ class CategoriaRepository {
 
     return categorias;
   }
+
+
+   Future cadastrarCategoria(Categoria categoria) async {
+    final supabase = Supabase.instance.client;
+
+    await supabase.from('categorias').insert({
+      'descricao': categoria.descricao,
+      'tipo_transacao': 1,
+      'icone': 60541,
+      'cor': 4284955319,
+      'ativo': true
+    });
+  }
+
+   Future alterarCategoria(Categoria categoria) async {
+    final supabase = Supabase.instance.client;
+
+    await supabase.from('categorias').update({
+      'descricao': categoria.descricao,
+      'tipo_transacao': 1,
+      'icone': 60541,
+      'cor': 4284955319,
+      'ativo': true
+    }).match({'id': categoria.id});
+  }
 }

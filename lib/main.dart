@@ -1,3 +1,4 @@
+import 'package:expense_tracker/pages/categoria_cadastro_page.dart';
 import 'package:expense_tracker/pages/conta_cadastro_page.dart';
 import 'package:expense_tracker/pages/home_page.dart';
 import 'package:expense_tracker/pages/login_page.dart';
@@ -11,8 +12,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   await Supabase.initialize(
-    url: '',
-    anonKey: '',
+    url: 'https://bkprhbqdqvmlldscmyvd.supabase.co',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrcHJoYnFkcXZtbGxkc2NteXZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU3NjgwODEsImV4cCI6MjAxMTM0NDA4MX0.cdJREDkNwwl7Jpt12zUZ4BE9VQ0T4g-NQNYpiK5whJI',
   );
   runApp(const MyApp());
 }
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         "/transacao-detalhes": (context) => const TransacaoDetalhesPage(),
         "/transacao-cadastro": (context) => const TransacaoCadastroPage(),
         "/conta-cadastro": (context) => const ContaCadastroPage(),
+        "/categoria-cadastro": (context) => const CategoriaCadastroPage(),
       },
       initialRoute: "/splash",
     );
